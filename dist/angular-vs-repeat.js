@@ -418,7 +418,7 @@ function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else i
               var pos = $scrollParent[0][scrollPos];
 
               if (updateInnerCollection()) {
-                $scope.$digest();
+                $scope.$evalAsync()
 
                 if (options._ensureScrollIntegrity) {
                   $scrollParent[0][scrollPos] = pos;
@@ -439,7 +439,7 @@ function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else i
               }
 
               if (updateInnerCollection()) {
-                $scope.$digest();
+                $scope.$evalAsync()
               }
             }
 
