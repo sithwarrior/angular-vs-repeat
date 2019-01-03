@@ -379,7 +379,9 @@
 
                         function scrollHandler() {
                             if (updateInnerCollection()) {
-                                $scope.$digest();
+                                if ($scope.$root && !$scope.$root.$$phase) {
+                                    $scope.$digest();
+                                }
 
                                 var expectedSize = sizesPropertyExists ?
                                                         $scope.sizesCumulative[originalLength] :
